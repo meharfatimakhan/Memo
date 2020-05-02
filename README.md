@@ -1,1 +1,1 @@
-# Memotion Analsis Android Application
+# Memotion Analysis Android Application
