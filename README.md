@@ -1,1 +1,1 @@
-# Memo
+# Memotion Analsis Android Application
