@@ -1,6 +1,7 @@
 package com.example.fyp_work;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView img;
     Button btn;
+    Button btn_humor;
+    Button btn_senti;
+    CardView cdv;
     private static final int PICK_IMAGE=100;
     Uri imageUir;
     @Override
@@ -26,6 +30,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         img=(ImageView)findViewById(R.id.image_upload);
         btn=(Button)findViewById(R.id.button_upload);
+        cdv=(CardView)findViewById(R.id.cardView_img);
+        btn_humor=(Button)findViewById(R.id.button_humor);
+        btn_senti=(Button)findViewById(R.id.button_sentiment);
+
+        btn_humor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),Results_humor.class);
+                startActivity(i);
+
+            }
+        });
+        btn_senti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),Result_sentiment.class);
+                startActivity(i);
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         {
             imageUir=data.getData();
             img.setImageURI(imageUir);
+            cdv.setBackgroundColor(00000);
         }
     }
 }

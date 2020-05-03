@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6E8E6E8"
+    android:background="#000000"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardView_img"
         android:layout_width="300dp"
         android:layout_height="205dp"
         android:layout_marginTop="32dp"
         android:elevation="12dp"
+        app:cardBackgroundColor="#cf1717"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_heading">
@@ -23,49 +24,99 @@
 
             <ImageView
                 android:id="@+id/image_upload"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="295dp"
+                android:layout_height="200dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/meme"
-                tools:srcCompat="@drawable/meme" />
+                app:layout_constraintVertical_bias="0.4"
+                app:srcCompat="@android:color/background_dark"
+                tools:srcCompat="@android:color/background_dark" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/button_upload"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
+        android:background="@drawable/button_shape"
+        android:ellipsize="none"
+        android:foreground="?android:attr/selectableItemBackground"
         android:text="Upload Meme"
+        android:textColor="#cf1717"
+        android:textSize="16sp"
+        android:visibility="visible"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView_img" />
 
     <TextView
         android:id="@+id/text_heading"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/wordfinal"
         android:fontFamily="cursive"
         android:foregroundTint="#FFFFFF"
-        android:text="Meme Classifier"
         android:textColor="#120E0E"
-        android:textSize="36sp"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+    <Button
+        android:id="@+id/button_addtext"
         android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="48dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape"
+        android:ellipsize="none"
+        android:foreground="?android:attr/selectableItemBackground"
+
+        android:text="Add Text"
+        android:textColor="#cf1717"
+        android:textSize="16sp"
+
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_holder_text" />
+
+    <Button
+        android:id="@+id/button_humor"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="145dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button_shape"
+        android:ellipsize="none"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Humor"
+        android:textColor="#cf1717"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_sentiment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_addtext" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_holder_text"
+        android:layout_width="305dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="#cf1717"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_upload">
@@ -74,41 +125,61 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/text_meme"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="12sp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_text"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+
+                app:cardBackgroundColor="@android:color/primary_text_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/text_meme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:autoText="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="#cf1717"
+                        android:textColorHighlight="#cf1717"
+                        android:textColorLink="#cf1717"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button_addtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Add Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+        android:id="@+id/button_sentiment"
+        android:layout_width="145dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="64dp"
 
-    <Button
-        android:id="@+id/button_predict"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Prediction"
-        android:textSize="30sp"
+        android:background="@drawable/button_shape"
+        android:ellipsize="none"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Sentiment"
+        android:textColor="#cf1717"
+        android:textSize="16sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_addtext"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/button_humor"
+        app:layout_constraintTop_toBottomOf="@+id/button_addtext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
