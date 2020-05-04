@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6E8E6E8"
+    android:background="#FFFFFF"
     tools:context=".splashscreen">
 
     <ImageView
@@ -17,5 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.431"
-        app:srcCompat="@drawable/logomeme" />
+        app:srcCompat="@drawable/logo_transparent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
