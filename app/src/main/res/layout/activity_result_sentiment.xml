@@ -13,7 +13,7 @@
         android:layout_marginTop="88dp"
         android:fontFamily="@font/lato_thin"
         app:layout_constraintHorizontal_bias="0.5"
-        android:text="Humor Score"
+        android:text="Sentiment Score"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,25 +37,25 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/textView_head2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_humor"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/memelog" />
+        app:srcCompat="@drawable/negative1" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_thin"
-        android:text="FEAR"
+        android:text="NEGATIVE"
+        android:textColor="#FF5722"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="#F30B9E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
